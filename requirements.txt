@@ -1,0 +1,10 @@
+streamlit
+langchain
+langchain-community
+langchain-core
+sentence-transformers
+transformers
+torch
+scikit-learn
+numpy
+pandas

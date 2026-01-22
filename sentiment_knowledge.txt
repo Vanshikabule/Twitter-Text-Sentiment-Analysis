@@ -1,0 +1,9 @@
+Negative sentiment words include poor, bad, worst, terrible, disappointing, hate.
+
+Positive sentiment words include good, great, excellent, amazing, love.
+
+Neutral sentiment is factual and emotionless, such as naming an object.
+
+The word "poor" expresses dissatisfaction or low quality.
+
+Single nouns like "dog" usually indicate neutral sentiment unless context is provided.
