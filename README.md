@@ -34,7 +34,7 @@ Model evaluation using accuracy and F1-score
 # How to Run the Project
 
 Step 1 :
-git clone https://github.com/vishal-1401/Twitter-Text-Sentiment-Analysis-Project/blob/main/README.md
+git clone https://github.com/Vanshikabule/Twitter-Text-Sentiment-Analysis/tree/main
 cd twitter-sentiment-analysis
 
 step 2:
