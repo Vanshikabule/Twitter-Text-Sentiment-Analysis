@@ -1,9 +1,10 @@
 import streamlit as st
 import pickle
+
+from transformers import pipeline
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain.llms import HuggingFacePipeline
-from transformers import pipeline
+from langchain_community.llms import HuggingFacePipeline
 
 # ---------- LOAD ML MODEL ----------
 @st.cache_resource
@@ -30,19 +31,19 @@ retriever = db.as_retriever(search_kwargs={"k": 2})
 
 # ---------- LOAD LLM ----------
 @st.cache_resource
-
 def load_llm():
     gen = pipeline(
-        "text-generation",
+        "text2text-generation",
         model="google/flan-t5-small",
         max_new_tokens=120
     )
     return HuggingFacePipeline(pipeline=gen)
 
-
 llm = load_llm()
 
 # ---------- UI ----------
+st.title("🐦 Twitter Text Sentiment Analysis")
+
 tweet = st.text_input("✍️ Enter Tweet")
 
 if st.button("Analyze"):
@@ -58,7 +59,7 @@ if st.button("Analyze"):
         context = "\n".join(d.page_content for d in docs)
 
         prompt = f"""
-You are validating a sentiment classification.
+Classify the sentiment of the tweet.
 
 ML Prediction: {ml_sentiment}
 
@@ -66,9 +67,10 @@ Similar labeled examples:
 {context}
 
 Tweet:
-"{tweet}"
+{tweet}
 
-Return:
+Respond in this exact format:
+
 Sentiment:
 Explanation:
 Confidence:
@@ -78,4 +80,3 @@ Confidence:
 
         st.subheader("📊 Result")
         st.write(final_result)
-
