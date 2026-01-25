@@ -94,4 +94,6 @@ Confidence:
 
         # ----- Display Result -----
         st.subheader("📊 Result")
+        result = llm.invoke(prompt)
         st.markdown(result)
+
