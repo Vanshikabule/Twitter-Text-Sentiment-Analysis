@@ -1,10 +1,8 @@
 streamlit
 langchain
 langchain-community
-langchain-core
-sentence-transformers
 transformers
+sentence-transformers
 torch
+faiss-cpu
 scikit-learn
-numpy
-pandas
