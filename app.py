@@ -42,7 +42,7 @@ retriever = db.as_retriever(search_kwargs={"k": 2})
 @st.cache_resource
 def load_llm():
     hf_pipeline = pipeline(
-        task="text2text-generation",
+        task="text-generation",
         model="google/flan-t5-small",
         max_new_tokens=120
     )
